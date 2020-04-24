@@ -7,8 +7,13 @@ import os
 import glob
 from itertools import product
 import pandas as pd
+import argparse
 
-experiment_folder = "Exp_demo"
+parser = argparse.ArgumentParser(description='Generate the computational phantoms for the given experiment folder.')
+parser.add_argument('folder', type=str, help='The folder containing the experiment definition.')
+args = parser.parse_args()
+
+experiment_folder = args.folder
 exp_definition = os.path.join(experiment_folder, "experiment.json")
 exp_settings = load_mcx_settings(exp_definition)
 
@@ -58,8 +63,8 @@ for vol_num, vol_values in enumerate(volume_combinations):
     for physical_num, physical_values in enumerate(physical_combinations):
         SO2, melanin_coeff, bg_hmt = physical_values
         physical_code = str(physical_num).zfill(physical_digits)
-        mu_a_spectra = [lambda x: 0, lambda x: 1e-6, lambda x: blood_mu_a(x, haematocrit=bg_hmt)/1000,
-                        lambda x: melanosome_mu_a(x, melanin_coeff)/1000, lambda x: blood_mu_a(x, SO2)/1000]
+        mu_a_spectra = [lambda x: 0, lambda x: 1e-6,lambda x: melanosome_mu_a(x, melanin_coeff)/1000, 
+                        lambda x: blood_mu_a(x, haematocrit=bg_hmt)/1000, lambda x: blood_mu_a(x, SO2)/1000]
         wavelength_digits = int(np.log10(len(wavelengths))) + 1
         for wavelength_num, wavelength in enumerate(wavelengths):
             wavelength_code = str(wavelength_num).zfill(wavelength_digits)

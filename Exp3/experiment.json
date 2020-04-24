@@ -12,6 +12,6 @@
   "epidermis_thickness": [100e-6],
   "epidermis_start": [0.3e-3],
   "def_params_file": "reg_settings.json",
-  "melanin_coefficients": [0.01],
+  "melanin_coefficients": [0.0001, 0.01],
   "background_haematocrit": [0.08]
 }
