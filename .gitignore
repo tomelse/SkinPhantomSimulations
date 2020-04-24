@@ -1,9 +1,10 @@
 # Dask
 dask-worker-space/
 
-#MCX
+# MCX + Recon models
 *.bin
 *.mc2
+*.npz
 settings_*.json
 
 # PyCharm
