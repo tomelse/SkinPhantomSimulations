@@ -62,8 +62,14 @@ for vol_num, vol_values in enumerate(volume_combinations):
     for physical_num, physical_values in enumerate(physical_combinations):
         SO2, melanin_coeff, bg_hmt = physical_values
         physical_code = str(physical_num).zfill(physical_digits)
-        mu_a_spectra = [lambda x: 0, lambda x: 1e-6,lambda x: melanosome_mu_a(x, melanin_coeff)/1000, 
-                        lambda x: blood_mu_a(x, haematocrit=bg_hmt)/1000, lambda x: blood_mu_a(x, SO2)/1000]
+        # Melanin 2
+        # Background 3
+        # Blood 4
+        mu_a_spectra = [lambda x: 0,
+                        lambda x: 1e-6,
+                        lambda x: melanosome_mu_a(x, melanin_coeff)/1000,
+                        lambda x: blood_mu_a(x, haematocrit=bg_hmt)/1000,
+                        lambda x: blood_mu_a(x, SO2)/1000]
         wavelength_digits = int(np.log10(len(wavelengths))) + 1
         for wavelength_num, wavelength in enumerate(wavelengths):
             wavelength_code = str(wavelength_num).zfill(wavelength_digits)
