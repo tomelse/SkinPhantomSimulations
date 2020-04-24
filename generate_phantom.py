@@ -4,7 +4,6 @@ from pymcx import load_mcx_settings, modify_settings_ms, write_mcx_settings
 from spectra import blood_mu_a
 from spectra import melanosome_mu_a
 import os
-import glob
 from itertools import product
 import pandas as pd
 import argparse
