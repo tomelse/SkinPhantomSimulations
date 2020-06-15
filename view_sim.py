@@ -7,3 +7,4 @@ result = read_output_file("Exp_demo/result_0_1_09.mc2", load_mcx_settings("Exp_d
 
 plt.imshow(np.log(np.squeeze(result[:,100,:])))
 plt.show()
+
