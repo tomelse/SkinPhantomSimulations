@@ -5,8 +5,8 @@ A = reshape(A, [200, 200, 200]); % this is our initial pressure distribution.
 fclose(fileID);
 
 p = zeros([400, 400]);
-p(100:299, 100:299) = squeeze(sum(A, 1))*1000;
-imagesc(p);
+p(100:299, 100:299) = squeeze(sum(A, 2))*1000;
+
 grid_size = 0.06e-3;
 
 % =========================================================================
