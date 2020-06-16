@@ -6,6 +6,7 @@ dask-worker-space/
 *.mc2
 *.npz
 settings_*.json
+*.mat
 
 # PyCharm
 .idea/
