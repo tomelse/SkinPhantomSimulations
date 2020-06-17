@@ -1,0 +1,17 @@
+{
+  "min_wavelength": 700,
+  "max_wavelength": 900,
+  "n_wavelengths": 21,
+  "vessel_radius": [2e-3],
+  "vessel_depth": [3e-3],
+  "SO2": [0.9],
+  "nx": 200,
+  "ny": 200,
+  "nz": 200,
+  "dx": 0.06e-3,
+  "epidermis_thickness": [100e-6],
+  "epidermis_start": [0.3e-3],
+  "def_params_file": "reg_settings.json",
+  "melanin_coefficients": [0.0001, 0.01, 0.03, 0.1, 0.2, 0.4],
+  "background_haematocrit": [0.08]
+}
